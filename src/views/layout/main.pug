@@ -1,0 +1,41 @@
+doctype html
+html(lang="es")
+	head
+		//-Global site tag (gtag.js) - Google Analytics
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-171296075-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-171296075-1');
+		//-----------------------------------------
+
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous")
+		link(rel="stylesheet" type="text/css" href="/static/css/"+getStaticFilename('main.css'))
+
+		//- FAVICON AND THEME
+		link(rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png")
+		link(rel="manifest" href="/static/favicon/site.webmanifest")
+		link(rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#286fb6")
+		meta(name="msapplication-TileColor" content="#2d89ef")
+		meta(name="theme-color" content="#286fb6")
+		
+		block head
+		
+		//-TWITTER CARDS
+		meta(name="twitter:card" content="summary_large_image")
+		meta(name="twitter:creator" content="@buenosjuegos1")
+	body
+		.body-wrapper
+			include ../partials/navigation
+			.content
+				include ../partials/topbar
+				main.main
+					block content
+				include ../partials/footer
+		block script

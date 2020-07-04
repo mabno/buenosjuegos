@@ -1,0 +1,54 @@
+extends layout/main
+block head
+	title Juega #{game.title} en Buenos Juegos
+	meta(name="description" content=game.description)
+
+	//- OPEN GRAPH
+	meta(property="og:title" content="Juega "+game.title+" en Buenos Juegos")
+	meta(property="og:description" content=game.description)
+	meta(property="og:site_name" content="Buenos Juegos")
+	meta(property="og:type" content="website")
+	meta(property="og:url" content="http://buenosjuegos.site/jugar/"+game.url)
+	meta(property="og:image" content="https://res.cloudinary.com/buenosjuegos/image/upload/c_fill,g_center,h_512,w_512/"+game.url+".jpg")
+
+block content
+	.gameplay#gameData(data-id=game.id data-url=game.url data-title=game.title data-average=game.vote.average data-category=game.category data-mready=""+game.mobileready)
+		section.game-box#gamebox
+			iframe.iframe.show-in-desktop#iframe(src=game.iframe width=game.dimensions.width height=game.dimensions.height scrolling="none" frameborder="0")
+			.game-mobile.show-in-mobile
+				button.game-mobile__button#playMobButton Jugar
+				img.game-mobile__img(src="https://res.cloudinary.com/buenosjuegos/image/upload/c_fill,g_center,h_750,w_750/"+game.url+".jpg" alt=game.title)
+			
+		section.other-games#otherGamesBox
+			.games-grid#otherGamesRoot
+
+		section.actions-bar
+			div
+				button.action-button#likeButton: i.fas.fa-thumbs-up
+				button.action-button#dislikeButton: i.fas.fa-thumbs-down
+				button.action-button#favoriteButton: i.fas.fa-heart
+			div
+				button.action-button.show-in-desktop#fullscreenButton: i.fas.fa-arrows-alt.fa-rotate-45
+				button.action-button.show-in-desktop#widescreenButton: i.fas.fa-arrows-alt-h
+		
+		section.game-info
+			.game-info__head
+				h1.game-info__title= game.title
+				.game-info__valoration
+					- for(let i = 0; i < 5; i++)
+						- if(i < Math.round(game.vote.average))
+							i.fas.fa-star
+						- else
+							i.far.fa-star
+			p.game-info__description= game.description
+			.game-info__data-group
+				span.game-info__data Categoria <b>#{categoryName}</b>
+				span.game-info__data Jugado <b>#{game.plays}</b> veces
+				span.game-info__data <b>#{game.vote.like}</b> Me gustas
+				span.game-info__data <b>#{game.vote.dislike}</b> No me gustas
+				span.game-info__data Valoración promedio <b>#{game.vote.average}</b>/5
+		a.return-button(href="/") 
+			i.fas.fa-arrow-left.fa-pull-left
+			|Ver otros juegos
+block script
+	script(src="/static/js/"+getStaticFilename('play.js'))

@@ -1,0 +1,27 @@
+extends layout/main
+block head
+	title= pageHead.title
+
+	meta(name="description" content=pageHead.description)
+	//- OPEN GRAPH
+	meta(property="og:title" content=pageHead.title)
+	meta(property="og:description" content=pageHead.description)
+	meta(property="og:site_name" content="Buenos Juegos")
+	meta(property="og:type" content="website")
+	meta(property="og:url" content="http://buenosjuegos.site/"+filterCategory)
+	meta(property="og:image" content="/static/img/banner.png")
+
+block content
+	h1.content-title
+		i.fas.fa-dice-d6.fa-pull-left
+		|#{categoryName}
+	.preload#preloadGames
+		.fas.fa-spinner.fa-spin
+	section.games-grid#root
+
+	button.show-more-button#showMoreButton(data-category=filterCategory data-filter="")
+		|Mostrar más
+		i.fas.fa-arrow-down.fa-pull-right
+
+block script
+	script(src="/static/js/"+getStaticFilename('games.js'))

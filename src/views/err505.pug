@@ -1,0 +1,17 @@
+extends layout/main
+block head
+	title Error 505 - Buenos Juegos
+	meta(name="description" content="Ocurrió un error interno en el servidor")
+block content
+	h1.content-title
+		i.fas.fa-exclamation-triangle.fa-pull-left
+		|Error
+	section.error-section
+		img.error-section__img(src="/static/img/error505.svg" alt="Error 505")
+		h2.error-section__title Ocurrió un error interno en el servidor
+		a.return-button.center(href="/")
+			i.fas.fa-arrow-left.fa-pull-left
+			|Volver al inicio
+
+block script
+	script(src="/static/js/"+getStaticFilename('error.js'))

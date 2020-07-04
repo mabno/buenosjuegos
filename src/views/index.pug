@@ -1,0 +1,37 @@
+extends layout/main
+block head
+	title Buenos Juegos - Juegos Gratis en Línea
+	meta(name="description" content="¡Juega gratis en Buenos Juegos! Disfruta de divertidos juegos de calidad en nuestro sitio en español. Nuevos juegos geniales todos los días ¡Diviértete!")
+
+	//- OPEN GRAPH
+	meta(property="og:title" content="Buenos Juegos")
+	meta(property="og:description" content="Juegos en línea de calidad, gratis y en español ¡Diviértete!")
+	meta(property="og:site_name" content="Buenos Juegos")
+	meta(property="og:type" content="website")
+	meta(property="og:url" content="http://buenosjuegos.site")
+	meta(property="og:image" content="/static/img/banner.png")
+
+block content
+	h1.content-title
+		i.fas.fa-dice-d6.fa-pull-left
+		|Inicio
+
+	section.home
+		img.home__img(src="/static/img/responsive.svg" alt="Logo de Buenos Juegos en dispositivos")
+		.home__body
+			h2.home__subtitle 
+				i.fas.fa-cloud.fa-pull-left
+				|Juegos gratis en línea
+			p.home__paragraph BuenosJuegos.site es un sitio web donde podrás acceder a una amplia colección de juegos de calidad gratis, online y en español. <br> Ingresá desde tu computadora de escritorio, laptop, celular o tablet ¡Juegos nuevos todos los días! ¿Tienes un tiempo libre? Entrá a Buenos Juegos
+
+	.preload#preloadGames
+		.fas.fa-spinner.fa-spin
+
+	section.games-grid#root
+
+	button.show-more-button#showMoreButton(data-category="" data-filter="")
+		|Mostrar más
+		i.fas.fa-arrow-down.fa-pull-right
+
+block script
+	script(src="/static/js/"+getStaticFilename('games.js'))

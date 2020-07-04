@@ -1,0 +1,30 @@
+{
+	"accion": {
+		"title": "Juegos de Acción - Buenos Juegos",
+		"description": "Disfruta nuestros juegos de acción y disparos. Juega nuestra colección de juegos de acción desde tu computadora o dispositivo móvil"
+	},
+	"aventura": {
+		"title": "Juegos de Aventura - Buenos Juegos",
+		"description": "Disfruta nuestros juegos de aventura. Juega nuestra colección de juegos de aventura desde tu computadora o dispositivo móvil"
+	},
+	"chicas": {
+		"title": "Juegos de Chicas - Buenos Juegos",
+		"description": "Disfruta de nuestros juegos de chicas, moda, vestidos y cocina. Juega nuestra colección de juegos de chicas desde tu"
+	},
+	"arcade": {
+		"title": "Juegos Arcade - Buenos Juegos",
+		"description": ""
+	},
+	"deportes": {
+		"title": "Juegos de Deportes - Buenos Juegos",
+		"description": ""
+	},
+	"puzzle": {
+		"title": "",
+		"description": "Juegos de Puzzles - Buenos Juegos"
+	},
+	"carreras": {
+		"title": "Juegos de Carreras - Buenos Juegos",
+		"description": ""
+	}
+}

@@ -1,0 +1,6 @@
+user-agent: *
+
+allow: *
+disallow: /micoleccion
+
+sitemap: /sitemap.xml

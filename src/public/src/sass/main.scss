@@ -1,0 +1,21 @@
+// FONT AWESOME
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/brands';
+@import 'fontawesome/regular';
+@import 'fontawesome/solid';
+
+// STYLES
+@import 'imports/normalize';
+@import 'imports/myreset';
+@import 'imports/variables';
+@import 'imports/animations';
+@import 'imports/mixins';
+@import 'imports/components/layout';
+@import 'imports/components/navigation';
+@import 'imports/components/topbar';
+@import 'imports/components/footer';
+@import 'imports/components/games_grid';
+@import 'imports/components/gameplay';
+@import 'imports/components/home';
+@import 'imports/components/error';
+@import 'imports/components/misc';

@@ -1,0 +1,57 @@
+@font-face {
+	font-family: 'Manrope';
+	src: url('#{$font-path}Manrope-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('#{$font-path}Manrope-Bold.ttf');
+	font-weight: bold;
+}
+
+:root {
+	color: $black;
+	font-family: 'Manrope';
+	font-size: 16px;
+	@include onMobile {
+		font-size: 14px;
+	}
+}
+
+html {
+	
+}
+
+body {
+	background-color: $grey;
+	&.noscroll {
+		overflow-y: hidden;
+	}
+}
+
+.body-wrapper{
+	display: flex;
+	width: 100%;
+	max-width: 1400px;
+	min-height: 100vh;
+	margin: 0 auto;
+	background-color: darken($white, 5%);
+	box-shadow: 0 0 100px 0 $black;
+	font-size: 1rem;
+}
+
+.content{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: .8rem 2rem;
+	overflow: hidden;
+	@include onMobile {
+		padding: .4rem 1rem;
+	}
+}
+
+.main {
+	flex: 1;
+	width: 100%;
+}

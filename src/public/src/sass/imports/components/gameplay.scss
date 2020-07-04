@@ -1,0 +1,159 @@
+.gameplay {
+	width: 100%;
+	display: grid;
+	align-items: flex-start;
+	justify-content: flex-start;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 150px;
+	transition: all 1s;
+
+	& > * {
+		@include fadeinAnimation;
+	}
+
+	@include onMobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.game-box {
+	width: 100%;
+	padding: .4rem;
+	@include box;
+}
+
+.iframe {
+	width: 100%;
+	margin: 0 auto;
+	background-color: $grey;
+}
+
+.game-mobile{
+	position: relative;
+	width: 100%;
+
+	&__button{
+		position: absolute;
+		top: calc(50% - 25px);
+		left: calc(50% - 100px);
+		display: block;
+		width: 200px;
+		height: 50px;
+		color: $white;
+		background-color: rgba(0,0,0,.5);
+		border: 2px solid $white;
+		border-radius: 10px;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	&__img{
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.other-games{
+	grid-column: 2;
+	grid-row: 1 / 10;
+	width: 100%;
+	@include onMobile{
+		grid-column: 1;
+		grid-row: 1;
+	}
+}
+
+.actions-bar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.action-button{
+	width: 50px;
+	height: 50px;
+	margin-right: .4rem;
+	font-size: 1.5rem;
+	@include buttonStyle;
+
+	&.active{
+		color: $white;
+		background-color: $blue;
+		@include boomAnimation;
+	}
+}
+
+.game-info {
+	grid-column: 1;
+	padding: .8rem;
+	@include box;
+
+	&__head {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: .4rem;
+		color: $blue;
+		line-height: 30px;
+	}
+
+	&__title{
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	&__valoration{
+		font-size: 1.2rem;
+	}
+
+	&__description, &__data{
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	&__data-group{
+		margin-top: .4rem;
+		padding-top: .4rem;
+		border-top: 1px solid darken($white, 5%);
+	}
+
+	&__data{
+		display: inline-block;
+		margin-right: .8rem;
+		color: $grey;
+	}
+
+}
+
+.dont-available {
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	background-color: rgba(0,0,0,.5);
+	@include fadeinAnimation;
+
+	&__box{
+		width: 100%;
+		padding: 1rem 1rem;
+		background-color: $white;
+		@include regularShadow(5px, 70%);
+		text-align: center;
+	}
+
+	&__text{
+		display: inline-block;
+		margin-bottom: 1rem;
+	}
+
+	.black-border-button{
+		@include onDesktop{
+			margin-left: .5rem;
+		}
+	}
+}

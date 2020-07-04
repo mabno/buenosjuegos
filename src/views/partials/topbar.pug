@@ -1,0 +1,14 @@
+.topbar
+	form.search-box(autocomplete="off" method="get" action="/buscar")
+		input(autocomplete="false" type="text" style="display:none;")
+		input.search-box__input#searchInput(type="text" name="s" placeholder="Buscar juegos")
+		button.search-box__button(type="submit")
+			i.fas.fa-search
+	button.open-nav-button.show-in-mobile#toggleNavButton
+		.fas.fa-bars
+.suggestion-box#suggestionBox
+	h2.suggestion-box__title Resultados
+	.suggestion-grid#searchResultsRoot
+	button.suggestion-box__button#showMoreResultsButton
+		|Ver más resultados
+		i.fas.fa-arrow-right.fa-pull-right

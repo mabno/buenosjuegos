@@ -1,0 +1,24 @@
+extends layout/main
+block head
+	title Buscar Juegos - Buenos Juegos
+	meta(name="description" content="Busca juegos entre toda nuestra colección")
+block content
+	h1.content-title
+		i.fas.fa-search.fa-pull-left
+		|Buscaste 
+		span.black "#{toSearch}"
+	#resultsMessage
+		h2.content-title--small.center No se encontraron resultados
+		a.return-button.center(href="/") 
+			i.fas.fa-arrow-left.fa-pull-left
+			|Volver al inicio
+	.preload#preloadGames
+		.fas.fa-spinner.fa-spin
+	section.games-grid#root
+
+	button.show-more-button#showMoreButton(data-category="" data-filter=toSearch)
+		|Mostrar más
+		i.fas.fa-arrow-down.fa-pull-right
+
+block script
+	script(src="/static/js/"+getStaticFilename('games.js'))

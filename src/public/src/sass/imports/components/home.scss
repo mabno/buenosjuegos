@@ -1,0 +1,41 @@
+.home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+	padding: 2rem 0;
+	@include fadeinAnimation;
+	overflow: hidden;
+
+	@include onMobile {
+		flex-wrap: wrap;
+	}
+
+	&__img {
+		flex: none;
+		width: 40%;
+		margin-right: 1rem;
+
+		@include onMobile{
+			width: 90%;
+		}
+	}
+
+	// &__body{
+	// 	@include onMobile{
+	// 		width: 100%;
+	// 	}
+	// }
+
+	&__subtitle{
+		margin: .5rem 0;
+		color: $blue;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+
+	&__paragraph{
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}

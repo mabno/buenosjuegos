@@ -1,0 +1,126 @@
+.topbar {
+	display: flex;
+	width: 100%;
+	height: 40px;
+	justify-content: flex-end;
+	margin-bottom: 2rem;
+}
+
+.search-box {
+	flex: 1;
+	height: 40px;
+	@include box;
+	@include fadeinAnimation;
+
+	&__input {
+		float: left;
+		display: block;
+		width: calc(100% - 40px);
+		height: 40px;
+		padding: 0 .5rem;
+		color: $black;
+
+		&:placeholder {
+			color: $grey;
+		}
+	}
+
+	&__button {
+		float: right;
+		width: 40px;
+		height: 40px;
+		color: $grey;
+		transition: color .2s;
+
+		@include onDesktop {
+			&:hover {
+				color: $blue;
+			}
+		}
+		@include onMobile {
+			&:active {
+				color: $blue;
+			}
+		}
+	}
+
+	@include onDesktop {
+		max-width: 300px;
+	}
+}
+
+.open-nav-button {
+	width: 40px;
+	height: 40px;
+	margin-left: .5rem;
+	color: $grey;
+	background-color: $white;
+	border-radius: 10px;
+	@include regularShadow(5px);
+	@include fadeinAnimation;
+	transition: color .2s;
+
+	&:active {
+		color: $blue;
+	}
+}
+
+.suggestion-box {
+	display: none;
+	width: 100%;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	@include box;
+
+	&__title {
+		color: $grey;
+		margin-bottom: 1rem;
+	}
+
+	.black-border-button{
+		float: right;
+		margin-top: 1rem;
+	}
+}
+
+.suggestion-grid {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.suggestion-link {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: .5rem;
+	border-radius: 10px;
+	transition: background-color .2s;
+
+	&__only-desktop {
+		position: absolute;
+		top: .5rem;
+		left: .5rem;
+		width: calc(100% - 1rem);
+		border-radius: 25%;
+	}
+
+	&__img{
+		width: 100%;
+		height: auto;
+		margin-bottom: .5rem;
+		background: url('#{$img-path}imagepreload.svg') center center / cover no-repeat;
+		border-radius: 25%;
+	}
+
+	&__title {
+		display: block;
+		@include textTruncate;
+		text-align: center;
+	}
+
+	&:hover {
+		background-color: darken($white, 10%);
+	}
+}

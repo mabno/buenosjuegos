@@ -1,0 +1,114 @@
+.games-grid {
+	display: grid;
+	width: 100%;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	margin-bottom: 1rem;
+	@include onMobile {
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	}
+}
+
+.grid-message {
+	grid-column: 1/-1;
+	margin-bottom: 200px;
+	@include fadeinAnimation;
+}
+
+.game-item {
+	position: relative;
+	border-bottom: 2px solid $blue;
+	@include box;
+	@include popAnimation;
+	transition: all .2s;
+
+	&__delete {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 30px;
+		height: 30px;
+		color: lighten($red, 30%);
+		background-color: $red;
+		border: 2px solid lighten($red, 30%);
+		border-radius: 10px;
+		opacity: .8;
+		transition: all .2s;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+	&__only-desktop {
+		position: absolute;
+		top: .8rem;
+		left: .8rem;
+		width: calc(100% - 1.6rem);
+		border-radius: 10px;
+	}
+
+	&__link {
+		display: block;
+		padding: .8rem;
+		line-height: 1.5;
+	}
+
+	&__img {
+		width: 100%;
+		height: auto;
+		background: url('#{$img-path}imagepreload.svg') center center / cover no-repeat;
+		border-radius: 10px;
+	}
+
+	&__title {
+		display: block;
+		font-weight: bold;
+		@include textTruncate;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		@include onMobile{
+			flex-direction: column;
+		}
+	}
+
+	&__category {
+		color: $grey;
+		font-size: .8rem;
+	}
+
+	&__valoration {
+		color: $blue;
+		font-size: .7rem;
+	}
+
+	@include onDesktop{
+		&:hover {
+			transform: scale(1.1);
+			@include regularShadow(5px, 50%);
+		}
+	}
+
+	@include onMobile {
+		&:active {
+			@include regularShadow(5px, 50%);
+		}
+	}
+}
+
+.show-more-button {
+	display: none;
+	width: 300px;
+	height: 50px;
+	margin: 0 auto;
+	@include buttonStyle;
+
+	@include onMobile {
+		width: 100%;
+	}
+
+}

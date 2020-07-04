@@ -1,0 +1,29 @@
+-
+	var categories = [
+		{icon: "fa-running", name: "Acción", href: "/accion"},
+		{icon: "fa-compass", name: "Aventura", href: "/aventura"},
+		{icon: "fa-candy-cane", name: "Chicas", href: "/chicas"},
+		{icon: "fa-gamepad", name: "Arcade", href: "/arcade"},
+		{icon: "fa-futbol", name: "Deportes", href: "/deportes"},
+		{icon: "fa-puzzle-piece", name: "Puzzle", href: "/puzzle"},
+		{icon: "fa-flag-checkered", name: "Carreras", href: "/carreras"}
+	];
+
+nav.navigation#navigation
+	a(href="/")
+		img.logo(src="/static/img/logo.svg" alt="Buenos Juegos Logo")
+	.navigation__separator
+	ul
+		each category in categories
+			li(class="navigation__item"+checkSame(category.href, currentPath , " active"))
+				a.navigation__button(href=category.href) 
+					i(class="fas "+category.icon+" fa-pull-left")
+					span= category.name
+
+	.navigation__separator
+	ul
+		li(class="navigation__item"+checkSame("/micoleccion", currentPath , " active"))
+			a.navigation__button(href="/micoleccion") 
+				i.fas.fa-folder-open.fa-pull-left
+				|Mi colección
+

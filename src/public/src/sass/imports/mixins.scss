@@ -1,0 +1,104 @@
+// MISC
+@mixin regularShadow($y, $darken_percentage: 15%) {
+	box-shadow: 0 $y 20px darken($white, $darken_percentage);
+}
+
+@mixin takeAll{
+	width: 100%;
+	height: 100%;
+}
+
+@mixin textTruncate{
+	width: 100%;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin box {
+	background-color: $white;
+	border-radius: 10px;
+	@include regularShadow(5px);
+}
+
+//BUTTON
+@mixin buttonStyle {
+	@include box;
+	color: $blue;
+	border-bottom: 2px solid $blue;
+	font-weight: bold;
+	transition: all .2s;
+
+	@include onDesktop {
+		&:hover {
+			color: $grey;
+			border-color: $grey;
+		}
+	}
+
+	@include onMobile {
+		&:active {
+			color: $grey;
+			border-color: $grey;
+		}
+	}
+}
+
+
+// MEDIA QUERY MIXIN
+@mixin onMobile {
+	@media screen and (max-width: $breakpoint) {
+		@content
+	}
+}
+
+@mixin onDesktop {
+	@media screen and (min-width: $breakpoint) {
+		@content
+	}
+}
+
+
+// ANIMATIONS
+@mixin fadeinAnimation{
+	animation-name: fade-in;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-fill-mode: backwards;
+}
+
+@mixin opacityFadeinAnimation{
+	animation-name: opacity-fade-in;
+	animation-duration: .5s;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: backwards;
+}
+
+@mixin popAnimation{
+	animation-name: pop;
+	animation-duration: 1.5s;
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-fill-mode: backwards;
+}
+
+@mixin boomAnimation{
+	animation-name: boom;
+	animation-duration: .5s;
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+
+@mixin floatAnimation{
+	animation-name: float;
+	animation-duration: 1s;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}

@@ -1,0 +1,116 @@
+.content-title {
+	display: inline-block;
+	margin-bottom: 1rem;
+	padding-bottom: .2rem;
+	color: $grey;
+	border-bottom: 1px solid darken($white, 10%);
+	font-size: 1.8rem;
+	@include textTruncate;
+	@include fadeinAnimation;
+
+	.black {
+		color: $black;
+	}
+
+	&.center{
+		text-align: center;
+	}
+}
+
+.content-title--small {
+	@extend .content-title;
+	margin: 0 0 .3rem 0;
+	border: none;
+	font-size: 1.4rem;
+}
+
+.preload {
+	margin: 0 auto;
+	margin-top: 2rem;
+	color: $grey;
+	font-size: 4rem;
+	text-align: center;
+	@include fadeinAnimation();
+}
+
+.changepage-spinner{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: $white;
+	text-align: center;
+	line-height: 100vh;
+	font-size: 4rem;
+	@include opacityFadeinAnimation;
+
+	.fas{
+		opacity: .8;
+	}
+
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: $blue;
+		opacity: .3;
+	}
+}
+
+.return-button {
+	display: block;
+	width: 200px;
+	height: 50px;
+	@include buttonStyle;
+	line-height: 50px;
+	text-align: center;
+	@include fadeinAnimation();
+
+	&.center {
+		margin: 0 auto;
+	}
+}
+
+.black-border-button {
+	display: inline-block;
+	border: 2px solid $black;
+	padding: .5rem 1.5rem;
+	border-radius: 10px;
+	font-weight: bold;
+	transition: all .2s;
+
+	&:hover {
+		color: $white;
+		background-color: $black;
+	}}
+
+.show-in-mobile {
+	display: none;
+	@include onMobile {
+		display: block;
+	}
+}
+
+.show-in-desktop {
+	@include onMobile {
+		display: none;
+	}
+}
+
+.noselectable {
+	pointer-events: none;
+}
+
+.addhomescreen-btn{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100px;
+	color: white;
+	background-color: red;
+}

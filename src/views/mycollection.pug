@@ -1,0 +1,21 @@
+extends layout/main
+block head
+	title Mi Colección - Buenos Juegos
+	meta(name="description" content="Visualiza tu colección de juegos favoritos y la lista de los últimos juegos que jugaste")
+block content
+	h1.content-title
+		i.fas.fa-folder-open.fa-pull-left
+		|Mi colección
+
+	h2.content-title--small
+		i.fas.fa-history.fa-pull-left
+		|Ultimos que jugaste
+	section.games-grid#lastPlayedRoot
+
+	h2.content-title--small
+		i.fas.fa-heart.fa-pull-left
+		|Favoritos 
+	section.games-grid#favoritesRoot
+	
+block script
+	script(src="/static/js/"+getStaticFilename('collection.js'))
