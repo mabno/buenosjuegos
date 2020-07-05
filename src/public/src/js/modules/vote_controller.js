@@ -53,7 +53,7 @@ const saveLastPlayed = (gameData) => {
 		}
 	}
 	if(!isIntoList){
-		lastPlayedList.push({
+		lastPlayedList.unshift({
 			id: gameData.id,
 			url: gameData.url,
 			title: gameData.title,

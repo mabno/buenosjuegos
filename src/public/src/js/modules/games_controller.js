@@ -25,7 +25,7 @@ module.exports = (gms, dom) => {
 	const data = dom.showMoreData;
 	const resultsMessage = dom.resultsMessage;
 
-	const showGamesNum = 20; 
+	const showGamesNum = 24; 
 	let pagination = 0;
 	let maxPagination;
 	let gamesFiltered;
