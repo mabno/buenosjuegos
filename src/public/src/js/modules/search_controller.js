@@ -20,9 +20,10 @@ module.exports = (gms, dom) => {
 
 	let suggestionOpen = false;
 	let anim = animations.fadeIn(suggestionBox);
+	anim.finish();
 
 	// Evento cuando se escribe en el input
-	input.addEventListener('keyup', () => {
+	input.addEventListener('input', () => {
 		if(input.value.length > 3){
 
 			let filteredGames = gamesFilter({
@@ -42,7 +43,7 @@ module.exports = (gms, dom) => {
 
 			filteredGames = filteredGames.slice(0, 10);
 
-			if(filteredGames.length > 0){
+			if(filteredGames.length > 0 && !suggestionOpen){
 				root.innerHTML = '';
 				for(game of filteredGames) {
 					root.innerHTML += htmlPartials.searchGame({
@@ -57,7 +58,7 @@ module.exports = (gms, dom) => {
 				suggestionOpen = true;
 			}
 			
-		} else if(suggestionOpen === true){
+		} else if(suggestionOpen){
 			anim.playbackRate = -1;
 			anim.onfinish = function(evt){
 				suggestionBox.style.display = null;

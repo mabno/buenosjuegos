@@ -4,7 +4,6 @@ const gamesInsert = require('./games_insert');
 const htmlPartials = require('./html_partials');
 let games;
 
-
 module.exports = (gms, dom) => {
 	/* 
 	Objeto 'dom' esperado:
