@@ -1,6 +1,7 @@
 # BuenosJuegos
 
-BuenosJuegos is a browser games website made with NodeJS and Express
+BuenosJuegos is a browser games website made with NodeJS and Express.
+*Website language: Spanish*
 
 
 ## Backend Features
