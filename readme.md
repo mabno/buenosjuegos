@@ -20,5 +20,11 @@ BuenosJuegos is a browser games website made with NodeJS and Express.
  - Modularized frontend files
  - Obfuscated public files
 
+### Enviroment variables
+
+ - PORT
+ - NODE_ENV (development | production)
+ - MONGODB_URI
+
 [Live Demo](https://buenosjuegos.herokuapp.com/)
 **+100 games of [Game Distribution](https://gamedistribution.com/)**
