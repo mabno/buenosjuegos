@@ -48,13 +48,12 @@ module.exports = dom => {
 	widescreenBtn.onclick = () => {
 		widescreenBtn.classList.toggle('active');
 		if(!widescreenToggle){
-			gamebox.style.gridColumn = 'span 2';
-			otherGamesBox.style.gridRowStart = '2';
-			otherGamesBox.style.gridColumn = '2';
+			gamebox.classList.add('widescreen')
+			otherGamesBox.classList.add('widescreen')
 			widescreenToggle = true;
 		} else {
-			gamebox.style = null;
-			otherGamesBox.style = null;
+			gamebox.classList.remove('widescreen')
+			otherGamesBox.classList.remove('widescreen')
 			widescreenToggle = false;
 		}
 
