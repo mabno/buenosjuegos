@@ -18,8 +18,7 @@ gameboxResize({
 	playMobButton: document.querySelector('#playMobButton'),
 	widescreenButton: document.querySelector('#widescreenButton'),
 	iframe: document.querySelector('#iframe'),
-	gamebox: document.querySelector('#gamebox'),
-	otherGamesBox: document.querySelector('#otherGamesBox')
+	gameplay: document.querySelector('#gameData')
 });
 
 voteController({

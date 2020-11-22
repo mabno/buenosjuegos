@@ -14,17 +14,22 @@
 	@include onMobile {
 		grid-template-columns: 1fr;
 	}
+
+	&.widescreen{
+		@include onDesktop{
+			.game-box, .actions-bar, .game-info, .return-button, .other-games{
+				grid-column: span 2;
+			}
+		}
+	}
+
+
 }
 
 .game-box {
 	width: 100%;
 	padding: .4rem;
 	@include box;
-	@include onDesktop{
-		&.widescreen{
-			grid-column: span 2;
-		}
-	}
 }
 
 .iframe {
@@ -63,12 +68,6 @@
 	grid-column: 2;
 	grid-row: 1 / 10;
 	width: 100%;
-	@include onDesktop{
-		&.widescreen{
-			grid-row-start: 2;
-			grid-column: 2;
-		}
-	}
 	@include onMobile{
 		grid-column: 1;
 		grid-row: 1;

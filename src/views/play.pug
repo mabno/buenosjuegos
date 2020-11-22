@@ -13,13 +13,13 @@ block head
 
 block content
 	.gameplay#gameData(data-id=game.id data-url=game.url data-title=game.title data-average=game.vote.average data-category=game.category data-mready=""+game.mobileready)
-		section.game-box#gamebox
+		section.game-box
 			iframe.iframe.show-in-desktop#iframe(src=game.iframe width=game.dimensions.width height=game.dimensions.height scrolling="none" frameborder="0")
 			.game-mobile.show-in-mobile
 				button.game-mobile__button#playMobButton Jugar
 				img.game-mobile__img(src="https://res.cloudinary.com/buenosjuegos/image/upload/c_fill,g_center,h_750,w_750/"+game.url+".jpg" alt=game.title)
 			
-		section.other-games#otherGamesBox
+		section.other-games
 			.games-grid#otherGamesRoot
 
 		section.actions-bar

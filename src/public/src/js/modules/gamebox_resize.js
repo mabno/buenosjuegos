@@ -6,8 +6,7 @@ module.exports = dom => {
 			playMobButton,
 			widescreenButton,
 			iframe,
-			gamebox,
-			otherGamesBox
+			gameplay,
 		}
 	*/
 
@@ -15,8 +14,7 @@ module.exports = dom => {
 	const playMobileBtn = dom.playMobButton;
 	const widescreenBtn = dom.widescreenButton;
 	const iframe = dom.iframe;
-	const gamebox = dom.gamebox;
-	const otherGamesBox = dom.otherGamesBox;
+	const gameplay = dom.gameplay;
 
 	const iframeWidth = Number(iframe.width);
 	const iframeHeight = Number(iframe.height);
@@ -48,12 +46,10 @@ module.exports = dom => {
 	widescreenBtn.onclick = () => {
 		widescreenBtn.classList.toggle('active');
 		if(!widescreenToggle){
-			gamebox.classList.add('widescreen')
-			otherGamesBox.classList.add('widescreen')
+			gameplay.classList.add('widescreen')
 			widescreenToggle = true;
 		} else {
-			gamebox.classList.remove('widescreen')
-			otherGamesBox.classList.remove('widescreen')
+			gameplay.classList.remove('widescreen')
 			widescreenToggle = false;
 		}
 
